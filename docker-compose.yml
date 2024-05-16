@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    container_name: belkian_AgenceVoyage
+    environment:
+      - DEBUG=true
+    volumes:
+      - "./AgenceVoyage/:/AgenceVoyage/"
+    # Ensure the container does not exit
+    tty: true
